@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #EEE;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sapjs-wrapper {
+  position: relative;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.sapjs-style-1 {
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: center;
+  gap: 0;
+  background: #FFF;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.sapjs-style-1 .sapjs-cover {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  flex: 0 0 auto;
+  margin-right: -10px;
+}
+
+.sapjs-cover img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.sapjs-player {
+  position: relative;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 100%;
+}
+
+.sapjs-playback {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  background: #2B2D42;
+}
+
+.sapjs-song {
+  position: relative;
+  white-space: nowrap;
+}
+
+.sapjs-style-1 .sapjs-title {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #2B2D42;
+}
+
+.sapjs-style-1 .sapjs-artist {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #2B2D42;
+}
+
+.sapjs-seek-wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1 1 100%;
+}
+
+.sapjs-current-time,
+.sapjs-duration {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 10px;
+  color: #8D99AE;
+}
+
+.sapjs-duration {
+  left: auto;
+  right: 0;
+}
+
+.sapjs-seek {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: #2B2D42;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sapjs-progress {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #48BFE3;
+}
+
+.sapjs-volume-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: center;
+  gap: 0px;
+}
+
+.sapjs-volume-wrapper.sapjs-open {
+  gap: 10px;
+}
+
+.sapjs-volume-toggle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #000;
+}
+
+.sapjs-volume-seek {
+  position: relative;
+  width: 0px;
+  height: 4px;
+  background: #2B2D42;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.sapjs-volume-wrapper.sapjs-open .sapjs-volume-seek {
+  width: 100px;
+}
+
+.sapjs-volume-value {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #48BFE3;
+}
