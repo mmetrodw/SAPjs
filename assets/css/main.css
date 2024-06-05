@@ -10,6 +10,7 @@ body {
 }
 
 .wrapper {
+  position: relative;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -22,6 +23,9 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.sapjs-wrapper * {
+  box-sizing: border-box;
+}
 .sapjs-style-1 {
   height: 90px;
   display: flex;
@@ -52,7 +56,7 @@ body {
   object-fit: cover;
 }
 
-.sapjs-player {
+.sapjs-style-1 .sapjs-player {
   position: relative;
   padding: 0 20px;
   display: flex;
@@ -65,21 +69,29 @@ body {
   flex: 1 1 100%;
 }
 
-.sapjs-playback {
+.sapjs-style-1 .sapjs-playback {
   position: relative;
   width: 50px;
   height: 50px;
+  padding: 15px;
   border-radius: 50%;
   flex: 0 0 auto;
   background: #2B2D42;
+  border: none;
+  outline: none;
 }
 
-.sapjs-song {
+.sapjs-style-1 .sapjs-playback svg {
+  fill: #FFF;
+  margin-left: 2px;
+}
+
+.sapjs-style-1 .sapjs-song {
   position: relative;
   white-space: nowrap;
 }
 
-.sapjs-style-1 .sapjs-title {
+.sapjs-title {
   font-family: inherit;
   font-size: 16px;
   font-weight: 400;
@@ -87,7 +99,7 @@ body {
   color: #2B2D42;
 }
 
-.sapjs-style-1 .sapjs-artist {
+.sapjs-artist {
   font-family: inherit;
   font-size: 16px;
   font-weight: 600;
@@ -95,24 +107,31 @@ body {
   color: #2B2D42;
 }
 
-.sapjs-seek-wrapper {
+.sapjs-style-1 .sapjs-seek-wrapper {
   position: relative;
   width: 100%;
   flex: 1 1 100%;
-}
-
-.sapjs-current-time,
-.sapjs-duration {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 10px;
   color: #8D99AE;
 }
 
+.sapjs-current-time,
 .sapjs-duration {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.sapjs-style-1 .sapjs-current-time,
+.sapjs-style-1 .sapjs-duration {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.sapjs-style-1 .sapjs-duration {
   left: auto;
   right: 0;
 }
@@ -133,7 +152,7 @@ body {
   background: #48BFE3;
 }
 
-.sapjs-volume-wrapper {
+.sapjs-style-1 .sapjs-volume-wrapper {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -142,9 +161,10 @@ body {
   align-content: stretch;
   align-items: center;
   gap: 0px;
+  transition: all 150ms ease-out;
 }
 
-.sapjs-volume-wrapper.sapjs-open {
+.sapjs-style-1 .sapjs-volume-wrapper.sapjs-open {
   gap: 10px;
 }
 
@@ -152,25 +172,115 @@ body {
   position: relative;
   width: 20px;
   height: 20px;
-  background: #000;
+  padding: 0;
+  background: #2B2D42;
+  border: none;
+  outline: none;
 }
 
-.sapjs-volume-seek {
+.sapjs-style-1 .sapjs-volume-wrapper.sapjs-open .sapjs-volume-toggle {
+  background: #48BFE3;
+}
+
+.sapjs-style-1 .sapjs-volume-seek {
   position: relative;
   width: 0px;
   height: 4px;
   background: #2B2D42;
   border-radius: 2px;
   overflow: hidden;
+  transition: all 150ms ease-out;
 }
 
-.sapjs-volume-wrapper.sapjs-open .sapjs-volume-seek {
+.sapjs-style-1 .sapjs-volume-wrapper.sapjs-open .sapjs-volume-seek {
   width: 100px;
 }
 
-.sapjs-volume-value {
+.sapjs-style-1 .sapjs-volume-value {
   position: relative;
   width: 50%;
   height: 100%;
   background: #48BFE3;
 }
+
+
+/* STYLE 2 */
+
+.sapjs-wrapper.sapjs-style-2 {
+  height: 50px;
+  display: flex;
+  background: #FFF;
+}
+
+.sapjs-style-2 .sapjs-cover {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 auto;
+}
+
+.sapjs-style-2 .sapjs-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+}
+
+.sapjs-style-2 .sapjs-seek {
+  height: 10px;
+  border-radius: 0px;
+}
+
+.sapjs-main-container {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 auto;
+}
+
+.sapjs-style-2 .sapjs-playback {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  border-radius: 0%;
+  flex: 0 0 auto;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.sapjs-style-2 .sapjs-playback svg {
+  fill: #2B2D42;
+}
+
+.sapjs-style-2 .sapjs-timecode {
+  position: relative;
+  margin-right: auto;
+  display: flex;
+  gap: 5px;
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 10px;
+  color: #2B2D42;
+}
+
+.sapjs-style-2 .sapjs-song {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+
+/* STYLE 3 */
