@@ -1,31 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
 body {
-  margin: 0;
   padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  background: #EEE;
-  box-sizing: border-box;
+  margin: 0;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 .wrapper {
   position: relative;
+  width: 100%;
+  min-height: 100vh;
   padding: 20px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background: #EEE;
 }
 
 .sapjs-wrapper {
   position: relative;
   width: 100%;
+  box-sizing: border-box;
   font-family: "Inter", sans-serif;
+  --white-color: #FFF;
+  --black-color: #2B2D42;
+  --grey-color: #8D99AE;
+  --accent-color: #48BFE3;
 }
 
-.sapjs-wrapper * {
+.sapjs-wrapper *,
+.sapjs-wrapper *:before,
+.sapjs-wrapper *:after {
   box-sizing: border-box;
 }
+
+.sapjs-cover {
+  position: relative;
+}
+
+.sapjs-cover img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sapjs-playback {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.sapjs-playback svg {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.sapjs-song {
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--black-color);
+}
+
+.sapjs-title {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  color: inherit;
+}
+
+.sapjs-artist {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: inherit;
+  color: inherit;
+}
+
+.sapjs-current-time,
+.sapjs-duration {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.sapjs-seek {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: var(--black-color);
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.sapjs-progress {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: var(--accent-color);
+}
+
+.sapjs-volume-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: center;
+  gap: 0px;
+  transition: all 150ms ease-out;
+}
+
+.sapjs-volume-wrapper.sapjs-open {
+  gap: 10px;
+}
+
+.sapjs-volume-toggle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.sapjs-volume-seek {
+  position: relative;
+  width: 0px;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 150ms ease-out;
+  cursor: pointer;
+}
+
+.sapjs-volume-wrapper.sapjs-open .sapjs-volume-seek {
+  width: 100px;
+}
+
+.sapjs-volume-value {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+
+
+
+/* STYLE 1 */
 .sapjs-style-1 {
   height: 90px;
   display: flex;
@@ -34,26 +168,16 @@ body {
   justify-content: flex-start;
   align-content: stretch;
   align-items: center;
-  gap: 0;
-  background: #FFF;
   border-radius: 15px;
   overflow: hidden;
+  background: var(--white-color);
 }
 
 .sapjs-style-1 .sapjs-cover {
-  position: relative;
   width: 90px;
   height: 90px;
   flex: 0 0 auto;
   margin-right: -10px;
-}
-
-.sapjs-cover img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
 }
 
 .sapjs-style-1 .sapjs-player {
@@ -70,41 +194,25 @@ body {
 }
 
 .sapjs-style-1 .sapjs-playback {
-  position: relative;
   width: 50px;
   height: 50px;
   padding: 15px;
   border-radius: 50%;
   flex: 0 0 auto;
-  background: #2B2D42;
-  border: none;
-  outline: none;
+  background: var(--black-color);
+}
+
+.sapjs-style-1 .sapjs-playback:hover {
+  background: var(--accent-color);
 }
 
 .sapjs-style-1 .sapjs-playback svg {
-  fill: #FFF;
+  fill: var(--white-color);
   margin-left: 2px;
 }
 
 .sapjs-style-1 .sapjs-song {
-  position: relative;
   white-space: nowrap;
-}
-
-.sapjs-title {
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #2B2D42;
-}
-
-.sapjs-artist {
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
-  color: #2B2D42;
 }
 
 .sapjs-style-1 .sapjs-seek-wrapper {
@@ -114,14 +222,7 @@ body {
   font-size: 12px;
   font-weight: 500;
   line-height: 10px;
-  color: #8D99AE;
-}
-
-.sapjs-current-time,
-.sapjs-duration {
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
+  color: var(--grey-color);
 }
 
 .sapjs-style-1 .sapjs-current-time,
@@ -136,84 +237,38 @@ body {
   right: 0;
 }
 
-.sapjs-seek {
-  position: relative;
-  width: 100%;
-  height: 4px;
-  background: #2B2D42;
-  border-radius: 2px;
-  overflow: hidden;
+.sapjs-style-1 .sapjs-volume-toggle svg {
+  fill: var(--black-color);
 }
 
-.sapjs-progress {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  background: #48BFE3;
+.sapjs-style-1 .sapjs-volume-toggle:hover svg {
+  fill: var(--accent-color);
 }
 
-.sapjs-style-1 .sapjs-volume-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-content: stretch;
-  align-items: center;
-  gap: 0px;
-  transition: all 150ms ease-out;
-}
-
-.sapjs-style-1 .sapjs-volume-wrapper.sapjs-open {
-  gap: 10px;
-}
-
-.sapjs-volume-toggle {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  background: #2B2D42;
-  border: none;
-  outline: none;
-}
-
-.sapjs-style-1 .sapjs-volume-wrapper.sapjs-open .sapjs-volume-toggle {
-  background: #48BFE3;
+.sapjs-style-1 .sapjs-volume-wrapper.sapjs-open .sapjs-volume-toggle svg {
+  fill: var(--accent-color);
 }
 
 .sapjs-style-1 .sapjs-volume-seek {
-  position: relative;
-  width: 0px;
-  height: 4px;
-  background: #2B2D42;
-  border-radius: 2px;
-  overflow: hidden;
-  transition: all 150ms ease-out;
-}
-
-.sapjs-style-1 .sapjs-volume-wrapper.sapjs-open .sapjs-volume-seek {
-  width: 100px;
+  background: var(--black-color);
 }
 
 .sapjs-style-1 .sapjs-volume-value {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  background: #48BFE3;
+  background: var(--accent-color);
 }
+
+
+
 
 
 /* STYLE 2 */
-
 .sapjs-wrapper.sapjs-style-2 {
   height: 50px;
   display: flex;
-  background: #FFF;
+  background: var(--white-color);
 }
 
 .sapjs-style-2 .sapjs-cover {
-  position: relative;
   width: 50px;
   height: 50px;
   flex: 0 0 auto;
@@ -231,7 +286,7 @@ body {
   border-radius: 0px;
 }
 
-.sapjs-main-container {
+.sapjs-style-2 .sapjs-main-container {
   position: relative;
   width: 100%;
   height: 40px;
@@ -247,19 +302,19 @@ body {
 }
 
 .sapjs-style-2 .sapjs-playback {
-  position: relative;
   width: 20px;
   height: 20px;
   padding: 0px;
   border-radius: 0%;
   flex: 0 0 auto;
-  background: transparent;
-  border: none;
-  outline: none;
 }
 
 .sapjs-style-2 .sapjs-playback svg {
-  fill: #2B2D42;
+  fill: var(--black-color);
+}
+
+.sapjs-style-2 .sapjs-playback:hover svg {
+  fill: var(--accent-color);
 }
 
 .sapjs-style-2 .sapjs-timecode {
@@ -271,7 +326,7 @@ body {
   font-size: 12px;
   font-weight: 500;
   line-height: 10px;
-  color: #2B2D42;
+  color: var(--black-color);
 }
 
 .sapjs-style-2 .sapjs-song {
@@ -282,5 +337,124 @@ body {
   justify-content: center;
 }
 
+.sapjs-style-2 .sapjs-volume-toggle svg {
+  fill: var(--black-color);
+}
 
-/* STYLE 3 */
+.sapjs-style-2 .sapjs-volume-toggle:hover svg {
+  fill: var(--accent-color);
+}
+
+.sapjs-style-2 .sapjs-volume-wrapper.sapjs-open .sapjs-volume-toggle svg {
+  fill: var(--accent-color);
+}
+
+.sapjs-style-2 .sapjs-volume-seek {
+  background: var(--black-color);
+}
+
+.sapjs-style-2 .sapjs-volume-value {
+  background: var(--accent-color);
+}
+
+
+
+/* COMMENT */
+.sapjs-wrapper.sapjs-style-3 {
+  height: 50px;
+  display: flex;
+  border-radius: 25px;
+}
+
+.sapjs-style-3 .sapjs-cover {
+  width: 70px;
+  height: 70px;
+  margin-left: -5px;
+  z-index: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.sapjs-style-3 .sapjs-seek {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 25px;
+}
+
+.sapjs-style-3 .sapjs-player {
+  position: absolute;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  top: 5px;
+  left: 5px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  background: var(--white-color);
+  border-radius: 20px;
+}
+
+.sapjs-style-3 .sapjs-playback {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  border-radius: 0%;
+  flex: 0 0 auto;
+}
+
+.sapjs-style-3 .sapjs-playback svg {
+  fill: var(--black-color);
+}
+
+.sapjs-style-3 .sapjs-playback:hover svg {
+  fill: var(--accent-color);
+}
+
+.sapjs-style-3 .sapjs-song {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+}
+
+.sapjs-style-3 .sapjs-timecode {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 10px;
+  color: var(--black-color);
+}
+
+.sapjs-style-3 .sapjs-volume-toggle svg {
+  fill: var(--black-color);
+}
+
+.sapjs-style-3 .sapjs-volume-toggle:hover svg {
+  fill: var(--accent-color);
+}
+
+.sapjs-style-3 .sapjs-volume-wrapper.sapjs-open .sapjs-volume-toggle svg {
+  fill: var(--accent-color);
+}
+
+.sapjs-style-3 .sapjs-volume-seek {
+  background: var(--black-color);
+}
+
+.sapjs-style-3 .sapjs-volume-value {
+  background: var(--accent-color);
+}
