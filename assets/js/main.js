@@ -1,6 +1,7 @@
-const volumeToggle = document.querySelector('.sapjs-volume-toggle');
-const volumeWrapper = document.querySelector('.sapjs-volume-wrapper');
+const vv = document.querySelectorAll('.sapjs-volume-toggle');
 
-volumeToggle.addEventListener('click', () => {
-  volumeWrapper.classList.toggle('sapjs-open');
-});
+vv.forEach(item => {
+  item.addEventListener('click', () => {
+    const video = item.parentNode.classList.toggle('sapjs-open');
+  });
+})
